@@ -13,7 +13,7 @@ def debug():
 
 
 def debug2():
-    return os.listdir("/")
+    return os.listdir("/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4/bin")
 
 
 def extract_tables(pdf, pages="all"):
