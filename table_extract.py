@@ -1,20 +1,5 @@
 import tabula
-import os
-import subprocess
 import streamlit as st
-import sys
-
-sys.path.insert(0,'/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4/bin')
-
-# os.environ["JAVA_HOME"] = "/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4"
-
-def debug():
-    return os.getenv("JAVA_HOME")
-
-
-def debug2():
-    return os.listdir("/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4/bin")
-
 
 def extract_tables(pdf, pages="all"):
     dfs = tabula.read_pdf(pdf, pages=pages)
@@ -24,7 +9,6 @@ def extract_tables(pdf, pages="all"):
 
 def st_ui():
     st.title("Tabula Example")
-    st.text(subprocess.check_output("which java", shell=True).decode("UTF-8"))
     
     with st.sidebar:
         uploaded_file = st.file_uploader("Upload PDF", type=["pdf"])
