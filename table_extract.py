@@ -1,5 +1,5 @@
 import tabula
-import os
+import subprocess
 import streamlit as st
 
 
@@ -11,7 +11,7 @@ def extract_tables(pdf, pages="all"):
 
 def st_ui():
     st.title("Tabula Example")
-    st.text(os.system("which java"))
+    st.text(subprocess.check_output("which java", shell=True).decode("UTF-8"))
     
     with st.sidebar:
         uploaded_file = st.file_uploader("Upload PDF", type=["pdf"])
