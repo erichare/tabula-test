@@ -2,9 +2,11 @@ import tabula
 import os
 import subprocess
 import streamlit as st
+import sys
 
-os.environ["JAVA_HOME"] = "/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4"
+sys.path.insert(0,'/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4/bin')
 
+# os.environ["JAVA_HOME"] = "/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4"
 
 def debug():
     return os.getenv("JAVA_HOME")
