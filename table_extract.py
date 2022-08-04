@@ -6,6 +6,14 @@ import streamlit as st
 os.environ["JAVA_HOME"] = "/pebble_env/442811d9-1c9e-4230-bd72-9dfe459356d4"
 
 
+def debug():
+    return os.getenv("JAVA_HOME")
+
+
+def debug2():
+    return os.listdir("/")
+
+
 def extract_tables(pdf, pages="all"):
     dfs = tabula.read_pdf(pdf, pages=pages)
 
